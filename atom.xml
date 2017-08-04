@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smilesoul.cn/"/>
-  <updated>2017-08-04T01:05:23.000Z</updated>
+  <updated>2017-08-04T01:17:28.000Z</updated>
   <id>http://smilesoul.cn/</id>
   
   <author>
@@ -16,11 +16,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Yeoman使用和编写</title>
+    <link href="http://smilesoul.cn/2017/08/04/Yeoman%E4%BD%BF%E7%94%A8%E5%92%8C%E7%BC%96%E5%86%99/"/>
+    <id>http://smilesoul.cn/2017/08/04/Yeoman使用和编写/</id>
+    <published>2017-08-04T01:17:05.000Z</published>
+    <updated>2017-08-04T01:17:28.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="编程语言" scheme="http://smilesoul.cn/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://smilesoul.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>原型函数Construction解析</title>
     <link href="http://smilesoul.cn/2016/07/06/JavaScript-constructor/"/>
     <id>http://smilesoul.cn/2016/07/06/JavaScript-constructor/</id>
     <published>2016-07-06T12:54:16.000Z</published>
-    <updated>2017-08-04T01:05:23.000Z</updated>
+    <updated>2017-08-04T01:13:22.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="理解原型之间的关系"><a href="#理解原型之间的关系" class="headerlink" title="理解原型之间的关系"></a>理解原型之间的关系</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">testOne() &#123;&#125;;</div><div class="line">testOne.prototype</div><div class="line"><span class="comment">// Object &#123;</span></div><div class="line"><span class="symbol">        constructor:</span> a()</div><div class="line"><span class="symbol">                arguments:</span> null</div><div class="line"><span class="symbol">                caller:</span> null</div><div class="line"><span class="symbol">                length:</span> <span class="number">0</span></div><div class="line"><span class="symbol">                name:</span><span class="string">"a"</span></div><div class="line"><span class="symbol">                prototype:</span> Object</div><div class="line"><span class="symbol">                __proto__:</span> ()</div><div class="line">                <span class="params">&lt;function scope&gt;</span></div><div class="line">                <span class="comment">//注意层级关系</span></div><div class="line"><span class="symbol">        __proto__:</span> Object</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">testOne.length</div><div class="line"><span class="comment">// output: 0</span></div><div class="line"></div><div class="line"></div><div class="line">testOne.prototype.name = <span class="string">'2'</span>;</div><div class="line">testOne.name</div><div class="line"><span class="comment">// output: 'a';</span></div></pre></td></tr></table></figure>
 <p><strong>注意</strong>: 这里输出为’a’，而不是２，它会去查constructor里面的name，因为prototype.constructor是会指回testOne，如果要获取＇２＇，只能testOne.prototype.name来获取.</p>
