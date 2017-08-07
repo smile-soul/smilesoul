@@ -7,18 +7,20 @@
   
   
   
-  <title>Smilesoul</title>
+  <title>前端构建工具介绍 | Smilesoul</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Smilesoul blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Smilesoul">
-<meta property="og:url" content="http://smilesoul.cn/index.html">
+  <meta name="description" content="Grunt and Gulp(构建工具) 两者优缺点对比 Grunt 有一个完善的社区，插件丰富. 它简单易学。（大约4000+，将近Gulp两倍); Grunt 是基于文件流，Gulp是基于管道流。 Grunt 的缺点 但插件很难遵守单一责任原则。比如说要对处理后的文件进行更名操作，你可能使用的是 uglify 插件，也有可能使用的是 concat 插件（取决于工作流的最后一个环节是谁）。对">
+<meta name="keywords" content="framework">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端构建工具介绍">
+<meta property="og:url" content="http://smilesoul.cn/2017/08/07/前端构建工具介绍/index.html">
 <meta property="og:site_name" content="Smilesoul">
-<meta property="og:description" content="Smilesoul blog">
+<meta property="og:description" content="Grunt and Gulp(构建工具) 两者优缺点对比 Grunt 有一个完善的社区，插件丰富. 它简单易学。（大约4000+，将近Gulp两倍); Grunt 是基于文件流，Gulp是基于管道流。 Grunt 的缺点 但插件很难遵守单一责任原则。比如说要对处理后的文件进行更名操作，你可能使用的是 uglify 插件，也有可能使用的是 concat 插件（取决于工作流的最后一个环节是谁）。对">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-08-07T13:05:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Smilesoul">
-<meta name="twitter:description" content="Smilesoul blog">
+<meta name="twitter:title" content="前端构建工具介绍">
+<meta name="twitter:description" content="Grunt and Gulp(构建工具) 两者优缺点对比 Grunt 有一个完善的社区，插件丰富. 它简单易学。（大约4000+，将近Gulp两倍); Grunt 是基于文件流，Gulp是基于管道流。 Grunt 的缺点 但插件很难遵守单一责任原则。比如说要对处理后的文件进行更名操作，你可能使用的是 uglify 插件，也有可能使用的是 concat 插件（取决于工作流的最后一个环节是谁）。对">
   
     <link rel="alternative" href="/atom.xml" title="Smilesoul" type="application/atom+xml">
   
@@ -32,9 +34,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -45,8 +44,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -276,9 +275,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-前端构建工具介绍" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-前端构建工具介绍" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  href="/2017/08/07/前端构建工具介绍/" class="article-date">
@@ -295,13 +292,28 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2017/08/07/前端构建工具介绍/">前端构建工具介绍</a>
+    <h1 class="article-title" itemprop="name">
+      前端构建工具介绍
     </h1>
   
 
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端构建/">前端构建</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/framework/">framework</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -339,185 +351,137 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/前端构建/">前端构建</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/framework/">framework</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2017/08/07/前端构建工具介绍/">前端构建工具介绍</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Smilesoul 的个人博客">Smilesoul</a></p>
+        <p><span>发布时间:</span>2017年08月07日 - 19时50分</p>
+        <p><span>最后更新:</span>2017年08月07日 - 21时05分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/08/07/前端构建工具介绍/" title="前端构建工具介绍">http://smilesoul.cn/2017/08/07/前端构建工具介绍/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://smilesoul.cn/2017/08/07/前端构建工具介绍/　　作者: Smilesoul" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a  href="/2017/08/04/Yeoman使用和编写/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Yeoman使用和编写</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Grunt-and-Gulp-构建工具"><span class="toc-number">1.</span> <span class="toc-text">Grunt and Gulp(构建工具)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#两者优缺点对比"><span class="toc-number">1.1.</span> <span class="toc-text">两者优缺点对比</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Browserify-and-Webpack-模块化工具"><span class="toc-number">2.</span> <span class="toc-text">Browserify and Webpack(模块化工具)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Npm-yarn-bower"><span class="toc-number">3.</span> <span class="toc-text">Npm, yarn, bower</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Yeoman"><span class="toc-number">4.</span> <span class="toc-text">Yeoman</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
 
 
 
 
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
 
-
-
-  
-    <article id="post-Yeoman使用和编写" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2017/08/04/Yeoman使用和编写/" class="article-date">
-      <time datetime="2017-08-04T01:17:05.000Z" itemprop="datePublished">2017-08-04</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2017/08/04/Yeoman使用和编写/">Yeoman使用和编写</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript-constructor" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2016/07/06/JavaScript-constructor/" class="article-date">
-      <time datetime="2016-07-06T12:54:16.000Z" itemprop="datePublished">2016-07-06</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2016/07/06/JavaScript-constructor/">原型函数Construction解析</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="理解原型之间的关系"><a href="#理解原型之间的关系" class="headerlink" title="理解原型之间的关系"></a>理解原型之间的关系</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">testOne() &#123;&#125;;</div><div class="line">testOne.prototype</div><div class="line"><span class="comment">// Object &#123;</span></div><div class="line"><span class="symbol">        constructor:</span> a()</div><div class="line"><span class="symbol">                arguments:</span> null</div><div class="line"><span class="symbol">                caller:</span> null</div><div class="line"><span class="symbol">                length:</span> <span class="number">0</span></div><div class="line"><span class="symbol">                name:</span><span class="string">"a"</span></div><div class="line"><span class="symbol">                prototype:</span> Object</div><div class="line"><span class="symbol">                __proto__:</span> ()</div><div class="line">                <span class="params">&lt;function scope&gt;</span></div><div class="line">                <span class="comment">//注意层级关系</span></div><div class="line"><span class="symbol">        __proto__:</span> Object</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">testOne.length</div><div class="line"><span class="comment">// output: 0</span></div><div class="line"></div><div class="line"></div><div class="line">testOne.prototype.name = <span class="string">'2'</span>;</div><div class="line">testOne.name</div><div class="line"><span class="comment">// output: 'a';</span></div></pre></td></tr></table></figure>
-<p><strong>注意</strong>: 这里输出为’a’，而不是２，它会去查constructor里面的name，因为prototype.constructor是会指回testOne，如果要获取＇２＇，只能testOne.prototype.name来获取.</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> testTwo = <span class="keyword">new</span> testOne();</div><div class="line">testTwo.prototype</div><div class="line"><span class="comment">//output: undefined</span></div></pre></td></tr></table></figure>
-<p><strong>注意</strong>: 每创建一个函数才会创建它的prototype对象，使用new，不会创建prototype对象</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">testTwo.constructor</span></div><div class="line"><span class="string">//output:</span> <span class="string">testOne()&#123;&#125;</span></div><div class="line"></div><div class="line"><span class="string">testTwo.constructor.name</span> <span class="string">=</span> <span class="string">'b'</span><span class="string">;</span></div><div class="line"><span class="string">testTwo.name</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">testTwo</span></div><div class="line"></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(ｔｅｓｔTwo,</span> <span class="string">'name'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;value:</span> <span class="string">"testTwo"</span><span class="string">,</span> <span class="attr">writable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span><span class="string">&#125;</span></div></pre></td></tr></table></figure>
-<p>所有原声的只可以delete，之后testOne.name输出为＇＇，不能修改.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">testTwo.constructor.names</span> <span class="string">=</span> <span class="string">'c'</span><span class="string">;</span></div><div class="line"><span class="string">testTwo.names</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">c</span></div><div class="line"></div><div class="line"><span class="string">Object,getOwnPropertyDescriptor(testTwo,</span> <span class="string">'names'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;value:</span> <span class="string">"c"</span><span class="string">,</span> <span class="attr">writable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span><span class="string">&#125;</span></div></pre></td></tr></table></figure>
-<p>非原生的属性，添加之后可以修改,所以在执行new操作时，将tetTwo的指针指向了testTwo.constructor</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">testOne.prototype.newOne = <span class="string">'5'</span>;</div><div class="line">testTwo.newOne</div><div class="line"><span class="comment">// output: '5'</span></div><div class="line">testTwo.newOne = <span class="string">'6'</span>;</div><div class="line">testTwo.newOne</div><div class="line"><span class="comment">// output: '6'</span></div><div class="line">testTwo</div><div class="line"><span class="comment">// output: </span></div><div class="line"><span class="symbol">    bbb:</span><span class="string">"444"</span></div><div class="line"><span class="symbol">    __proto__:</span>	Object</div><div class="line"><span class="symbol">        bbb:</span> <span class="string">"2"</span></div><div class="line"><span class="symbol">        constructor:</span> d()</div><div class="line">        ＿_proto__: Object</div></pre></td></tr></table></figure>
-<p>newOne　屏蔽掉了原属性，因为将怎么testOne的指针指＿proto＿</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Object.keys(testTwo);</div><div class="line"><span class="regexp">//</span> output: [<span class="string">'bbb'</span>]</div></pre></td></tr></table></figure>
-<p>这也是为什么Object.keys只出现bbb，因为＿proto＿，constructor不可枚举.</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">name</span>()<span class="comment">&#123;&#125;</span>;</div><div class="line"><span class="keyword">name</span>.prototype;</div><div class="line"><span class="comment">// output: constructor: name()</span></div><div class="line">            __proto__:<span class="keyword">Object</span>               </div><div class="line"><span class="keyword">const</span> nameTwo()<span class="comment">&#123;&#125;</span>;</div><div class="line">nameTwo.prototype = <span class="comment">&#123;&#125;</span>;</div><div class="line">nameTwo.prototype;</div><div class="line"><span class="comment">// output: __proto__:Object</span></div></pre></td></tr></table></figure>
-<p>这也切断了与原型之间的联系，constructor变成了＿ｐｒｏｔｏ＿的属性</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">const</span> <span class="string">nameThree()&#123;&#125;;</span></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(nameThree.prototype,</span> <span class="string">'constructor'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;</span> <span class="attr">writable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span> <span class="string">&#125;</span></div><div class="line"><span class="string">nameThree.prototype</span> <span class="string">=</span> <span class="string">&#123;</span> <span class="attr">constructor:</span> <span class="string">nameThree&#125;;</span></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(nameThree.prototype,</span> <span class="string">'constructor'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;writable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span><span class="string">&#125;</span></div></pre></td></tr></table></figure>
-<p>操作prototype会使，constructor消失，如果手动改变，这会使constructor种的enumerable变成true（即可枚举）    </p>
-
-      
+            <a  href="/2017/08/04/Yeoman使用和编写/" title="下一篇: Yeoman使用和编写">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/07/前端构建工具介绍/">前端构建工具介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/04/Yeoman使用和编写/">Yeoman使用和编写</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/JavaScript-constructor/">原型函数Construction解析</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
 
 
-
-
-
-
-  
-  
+    <script>
+        
+    </script>
 
 </div>
       <footer id="footer">
