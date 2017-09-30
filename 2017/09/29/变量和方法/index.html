@@ -7,20 +7,20 @@
   
   
   
-  <title>原型函数Construction解析 | Smilesoul</title>
+  <title>变量和方法 | Smilesoul</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="理解原型之间的关系1234567891011121314151617181920212223testOne() &amp;#123;&amp;#125;;testOne.prototype// Object &amp;#123;        constructor: a()                arguments: null                caller: null">
+  <meta name="description" content="变量和方法 类型 js的变量中只用primitive类型和object类型 平时使用的字符串应该是primitive类型，应该是not an object and has no methods  12345const str = &apos;hello&apos;;console.log(str.charAt(0));// output: hObject.prototype.toString.call(str)//">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原型函数Construction解析">
-<meta property="og:url" content="http://smilesoul.cn/2016/07/06/JavaScript-constructor/index.html">
+<meta property="og:title" content="变量和方法">
+<meta property="og:url" content="http://smilesoul.cn/2017/09/29/变量和方法/index.html">
 <meta property="og:site_name" content="Smilesoul">
-<meta property="og:description" content="理解原型之间的关系1234567891011121314151617181920212223testOne() &amp;#123;&amp;#125;;testOne.prototype// Object &amp;#123;        constructor: a()                arguments: null                caller: null">
+<meta property="og:description" content="变量和方法 类型 js的变量中只用primitive类型和object类型 平时使用的字符串应该是primitive类型，应该是not an object and has no methods  12345const str = &apos;hello&apos;;console.log(str.charAt(0));// output: hObject.prototype.toString.call(str)//">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-04T01:13:22.000Z">
+<meta property="og:updated_time" content="2017-09-29T14:31:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原型函数Construction解析">
-<meta name="twitter:description" content="理解原型之间的关系1234567891011121314151617181920212223testOne() &amp;#123;&amp;#125;;testOne.prototype// Object &amp;#123;        constructor: a()                arguments: null                caller: null">
+<meta name="twitter:title" content="变量和方法">
+<meta name="twitter:description" content="变量和方法 类型 js的变量中只用primitive类型和object类型 平时使用的字符串应该是primitive类型，应该是not an object and has no methods  12345const str = &apos;hello&apos;;console.log(str.charAt(0));// output: hObject.prototype.toString.call(str)//">
   
     <link rel="alternative" href="/atom.xml" title="Smilesoul" type="application/atom+xml">
   
@@ -275,11 +275,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-JavaScript-constructor" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-变量和方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2016/07/06/JavaScript-constructor/" class="article-date">
-      <time datetime="2016-07-06T12:54:16.000Z" itemprop="datePublished">2016-07-06</time>
+      <a  href="/2017/09/29/变量和方法/" class="article-date">
+      <time datetime="2017-09-29T13:55:13.000Z" itemprop="datePublished">2017-09-29</time>
 </a>
 
     </div>
@@ -293,7 +293,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      原型函数Construction解析
+      变量和方法
     </h1>
   
 
@@ -319,22 +319,47 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="理解原型之间的关系"><a href="#理解原型之间的关系" class="headerlink" title="理解原型之间的关系"></a>理解原型之间的关系</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">testOne() &#123;&#125;;</div><div class="line">testOne.prototype</div><div class="line"><span class="comment">// Object &#123;</span></div><div class="line"><span class="symbol">        constructor:</span> a()</div><div class="line"><span class="symbol">                arguments:</span> null</div><div class="line"><span class="symbol">                caller:</span> null</div><div class="line"><span class="symbol">                length:</span> <span class="number">0</span></div><div class="line"><span class="symbol">                name:</span><span class="string">"a"</span></div><div class="line"><span class="symbol">                prototype:</span> Object</div><div class="line"><span class="symbol">                __proto__:</span> ()</div><div class="line">                <span class="params">&lt;function scope&gt;</span></div><div class="line">                <span class="comment">//注意层级关系</span></div><div class="line"><span class="symbol">        __proto__:</span> Object</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">testOne.length</div><div class="line"><span class="comment">// output: 0</span></div><div class="line"></div><div class="line"></div><div class="line">testOne.prototype.name = <span class="string">'2'</span>;</div><div class="line">testOne.name</div><div class="line"><span class="comment">// output: 'a';</span></div></pre></td></tr></table></figure>
-<p><strong>注意</strong>: 这里输出为’a’，而不是２，它会去查constructor里面的name，因为prototype.constructor是会指回testOne，如果要获取＇２＇，只能testOne.prototype.name来获取.</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> testTwo = <span class="keyword">new</span> testOne();</div><div class="line">testTwo.prototype</div><div class="line"><span class="comment">//output: undefined</span></div></pre></td></tr></table></figure>
-<p><strong>注意</strong>: 每创建一个函数才会创建它的prototype对象，使用new，不会创建prototype对象</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">testTwo.constructor</span></div><div class="line"><span class="string">//output:</span> <span class="string">testOne()&#123;&#125;</span></div><div class="line"></div><div class="line"><span class="string">testTwo.constructor.name</span> <span class="string">=</span> <span class="string">'b'</span><span class="string">;</span></div><div class="line"><span class="string">testTwo.name</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">testTwo</span></div><div class="line"></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(ｔｅｓｔTwo,</span> <span class="string">'name'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;value:</span> <span class="string">"testTwo"</span><span class="string">,</span> <span class="attr">writable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span><span class="string">&#125;</span></div></pre></td></tr></table></figure>
-<p>所有原声的只可以delete，之后testOne.name输出为＇＇，不能修改.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">testTwo.constructor.names</span> <span class="string">=</span> <span class="string">'c'</span><span class="string">;</span></div><div class="line"><span class="string">testTwo.names</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">c</span></div><div class="line"></div><div class="line"><span class="string">Object,getOwnPropertyDescriptor(testTwo,</span> <span class="string">'names'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;value:</span> <span class="string">"c"</span><span class="string">,</span> <span class="attr">writable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span><span class="string">&#125;</span></div></pre></td></tr></table></figure>
-<p>非原生的属性，添加之后可以修改,所以在执行new操作时，将tetTwo的指针指向了testTwo.constructor</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">testOne.prototype.newOne = <span class="string">'5'</span>;</div><div class="line">testTwo.newOne</div><div class="line"><span class="comment">// output: '5'</span></div><div class="line">testTwo.newOne = <span class="string">'6'</span>;</div><div class="line">testTwo.newOne</div><div class="line"><span class="comment">// output: '6'</span></div><div class="line">testTwo</div><div class="line"><span class="comment">// output: </span></div><div class="line"><span class="symbol">    bbb:</span><span class="string">"444"</span></div><div class="line"><span class="symbol">    __proto__:</span>	Object</div><div class="line"><span class="symbol">        bbb:</span> <span class="string">"2"</span></div><div class="line"><span class="symbol">        constructor:</span> d()</div><div class="line">        ＿_proto__: Object</div></pre></td></tr></table></figure>
-<p>newOne　屏蔽掉了原属性，因为将怎么testOne的指针指＿proto＿</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Object.keys(testTwo);</div><div class="line"><span class="regexp">//</span> output: [<span class="string">'bbb'</span>]</div></pre></td></tr></table></figure>
-<p>这也是为什么Object.keys只出现bbb，因为＿proto＿，constructor不可枚举.</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">name</span>()<span class="comment">&#123;&#125;</span>;</div><div class="line"><span class="keyword">name</span>.prototype;</div><div class="line"><span class="comment">// output: constructor: name()</span></div><div class="line">            __proto__:<span class="keyword">Object</span>               </div><div class="line"><span class="keyword">const</span> nameTwo()<span class="comment">&#123;&#125;</span>;</div><div class="line">nameTwo.prototype = <span class="comment">&#123;&#125;</span>;</div><div class="line">nameTwo.prototype;</div><div class="line"><span class="comment">// output: __proto__:Object</span></div></pre></td></tr></table></figure>
-<p>这也切断了与原型之间的联系，constructor变成了＿ｐｒｏｔｏ＿的属性</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">const</span> <span class="string">nameThree()&#123;&#125;;</span></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(nameThree.prototype,</span> <span class="string">'constructor'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;</span> <span class="attr">writable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span> <span class="string">&#125;</span></div><div class="line"><span class="string">nameThree.prototype</span> <span class="string">=</span> <span class="string">&#123;</span> <span class="attr">constructor:</span> <span class="string">nameThree&#125;;</span></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(nameThree.prototype,</span> <span class="string">'constructor'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;writable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span><span class="string">&#125;</span></div></pre></td></tr></table></figure>
-<p>操作prototype会使，constructor消失，如果手动改变，这会使constructor种的enumerable变成true（即可枚举）    </p>
+        <h3 id="变量和方法"><a href="#变量和方法" class="headerlink" title="变量和方法"></a>变量和方法</h3><hr>
+<h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><ul>
+<li>js的变量中只用primitive类型和object类型</li>
+<li><p>平时使用的字符串应该是primitive类型，应该是not an object and has no methods</p>
+ <figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="built_in">str</span> = <span class="string">'hello'</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.charAt(<span class="number">0</span>));</div><div class="line"><span class="comment">// output: h</span></div><div class="line"><span class="keyword">Object</span>.prototype.toString.call(<span class="built_in">str</span>)</div><div class="line"><span class="comment">// output: [object String]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>出现这样的情况，因为str.charAt时候，String(primitive)转换成了String(object)类型在<a href="http://www.ecma-international.org/ecma-262/5.1/#sec-8.7" target="_blank" rel="external">ECMAScript Language Specification&amp;8.7.1</a> 明确指出变量类型的转换</p>
+</li>
+<li>所以primitive类型的value是immutable的，而variable是mutable的，对与primitive类型的变量，为其赋值，本质上就是让变量指向新的内存。</li>
+</ul>
+<hr>
+<h4 id="lodash相关技巧和实例"><a href="#lodash相关技巧和实例" class="headerlink" title="lodash相关技巧和实例"></a>lodash相关技巧和实例</h4><ul>
+<li><p>N次循环技巧</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">Array</span>.apply(<span class="literal">null</span>, <span class="built_in">Array</span>(<span class="number">5</span>)).forEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    &#125;);</div><div class="line">_.times(<span class="number">5</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>深层次查找属性</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">   const ownerArr = [&#123;</div><div class="line"><span class="string">"owner"</span>: <span class="string">"Colin"</span>,</div><div class="line"> 	<span class="string">"pets"</span>: [&#123;<span class="string">"name"</span>:<span class="string">"dog1"</span>&#125;, &#123;<span class="string">"name"</span>: <span class="string">"dog2"</span>&#125;]</div><div class="line">   &#125;, &#123;</div><div class="line">       <span class="string">"owner"</span>: <span class="string">"John"</span>,</div><div class="line">       <span class="string">"pets"</span>: [&#123;<span class="string">"name"</span>:<span class="string">"dog3"</span>&#125;, &#123;<span class="string">"name"</span>: <span class="string">"dog4"</span>&#125;]</div><div class="line">   &#125;];</div><div class="line"></div><div class="line">   ownerArr.<span class="keyword">map</span>(owner =&gt; &#123;</div><div class="line">       return owner.pets[<span class="number">0</span>].name;</div><div class="line">       &#125;);</div><div class="line"></div><div class="line">   <span class="number">_</span>.<span class="keyword">map</span>(ownerArr, <span class="string">'pets[0].name'</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>数组独立</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span>.apply(<span class="literal">null</span>, <span class="keyword">Array</span>(<span class="number">6</span>)).map( (item, index) =&gt; &#123;</div><div class="line"><span class="keyword">return</span> <span class="string">"ball_"</span> + index;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="literal">_</span>.times(<span class="number">6</span>, <span class="literal">_</span>.uniqueId.bind(<span class="literal">null</span>, <span class="string">'ball_'</span>));</div><div class="line"></div><div class="line"><span class="literal">_</span>.times(<span class="number">6</span>, <span class="literal">_</span>.partial(<span class="literal">_</span>.uniqueId, <span class="string">'ball_'</span>));</div><div class="line"><span class="comment">// output: [ball_0, ball_1, ball_2, ball_3, ball_4, ball_5]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>对象扩展(可以直接用Object.assgin(), 底层一样的实现）</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">     Object.prototype.extend = obj =&gt; &#123;</div><div class="line">	<span class="keyword">for</span> (let i <span class="keyword">in</span> obj) &#123;</div><div class="line">  		<span class="keyword">if</span> (obj.hasOwnProperty(i)) &#123;</div><div class="line">    		this[i] = obj[i]<span class="comment">;</span></div><div class="line">  		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;<span class="comment">;</span></div><div class="line">    <span class="keyword">const</span> objA = &#123;<span class="string">"name"</span>: <span class="string">"colin"</span>, <span class="string">"car"</span>: <span class="string">"suzuki"</span>&#125;<span class="comment">;</span></div><div class="line">    <span class="keyword">const</span> objB = &#123;<span class="string">"name"</span>: <span class="string">"james"</span>, <span class="string">"age"</span>: <span class="number">17</span>&#125;<span class="comment">;</span></div><div class="line"></div><div class="line">    objA.extend(objB)<span class="comment">;</span></div><div class="line">    console.<span class="built_in">log</span>(objA)<span class="comment">; </span></div><div class="line">    // &#123;<span class="string">"name"</span>: <span class="string">"james"</span>, <span class="string">"age"</span>: <span class="number">17</span>, <span class="string">"car"</span>: <span class="string">"suzuki"</span>&#125;<span class="comment">;</span></div><div class="line"></div><div class="line">    _.<span class="built_in">assign</span>(objA, objB)<span class="comment">;</span></div><div class="line">    // &#123;<span class="string">"name"</span>: <span class="string">"james"</span>, <span class="string">"age"</span>: <span class="number">17</span>, <span class="string">"car"</span>: <span class="string">"suzuki"</span>&#125;<span class="comment">;</span></div><div class="line"></div><div class="line">    // ES6</div><div class="line">    Objetct.<span class="built_in">assign</span>(&#123;&#125;, objA, objB)<span class="comment">;</span></div><div class="line">    // &#123;<span class="string">"name"</span>: <span class="string">"james"</span>, <span class="string">"age"</span>: <span class="number">17</span>, <span class="string">"car"</span>: <span class="string">"suzuki"</span>&#125;<span class="comment">;</span></div><div class="line">    //_.<span class="built_in">assign</span> 是浅拷贝，所以会覆盖name</div></pre></td></tr></table></figure>
+</li>
+<li><p>补充作用域：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">test</span> = '1';</div><div class="line">testOne() &#123;</div><div class="line">    <span class="keyword">return</span> testTwo&#123;</div><div class="line">        cosole.<span class="built_in">log</span>(<span class="keyword">test</span>);</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">const</span> <span class="keyword">test</span> = '2';</div><div class="line">&#125;</div><div class="line">testOne()();</div><div class="line"><span class="comment">// output: undefined </span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">test</span> = '1';</div><div class="line">testOne() &#123;</div><div class="line">    <span class="keyword">return</span> testTwo&#123;</div><div class="line">        console.<span class="built_in">log</span>(<span class="keyword">test</span>);</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">test</span> = '2';</div><div class="line">&#125;</div><div class="line"><span class="comment">// output: 1;</span></div></pre></td></tr></table></figure>
+<p>因为重新定义了const，他在搜索作用域时候，会自上到下搜索<strong>声明</strong>的变量，如果没有声明，查找才会进去下一层，此处输出undefined，因为在testOne（）里面const之前就使用了test，所以就输出了undefined,而在第二个例子里面没有声明test，所以他就跳转出去，去下一层寻找test，即输出为1</p>
+<ul>
+<li>作用域提升</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="number">1</span>;</div><div class="line">b()&#123;</div><div class="line">    <span class="keyword">const</span> a = b = <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(a, b);</div><div class="line"><span class="comment">// 抛出异常，因为ｂ没有定义</span></div><div class="line"></div><div class="line">b();</div><div class="line">console.<span class="built_in">log</span>(a, b);</div><div class="line"><span class="comment">//output: 1,2;</span></div><div class="line"><span class="comment">// const a = b = 2 等价于　在全局声明const b = 2; 内部声明const a = b;因为=运算符是重右像左运算的</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h4><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank" rel="external">MDN连接文档</a></li>
+<li><a href="http://colintoh.com/blog/lodash-10-javascript-utility-functions-stop-rewriting" target="_blank" rel="external">lodash相关技巧</a></li>
+<li><a href="https://www.sitepoint.com/lodash-features-replace-es6/" target="_blank" rel="external">10个ES6可以代替lodash的方法</a></li>
+</ul>
 
       
     </div>
@@ -343,13 +368,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2016/07/06/JavaScript-constructor/">原型函数Construction解析</a></p>
+        <p><span>本文标题:</span><a  href="/2017/09/29/变量和方法/">变量和方法</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Smilesoul 的个人博客">Smilesoul</a></p>
-        <p><span>发布时间:</span>2016年07月06日 - 20时54分</p>
-        <p><span>最后更新:</span>2017年08月04日 - 09时13分</p>
+        <p><span>发布时间:</span>2017年09月29日 - 21时55分</p>
+        <p><span>最后更新:</span>2017年09月29日 - 22时31分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/06/JavaScript-constructor/" title="原型函数Construction解析">http://smilesoul.cn/2016/07/06/JavaScript-constructor/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://smilesoul.cn/2016/07/06/JavaScript-constructor/　　作者: Smilesoul" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/29/变量和方法/" title="变量和方法">http://smilesoul.cn/2017/09/29/变量和方法/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://smilesoul.cn/2017/09/29/变量和方法/　　作者: Smilesoul" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -360,15 +385,11 @@
 
 <nav id="article-nav">
   
-    <a  href="/2017/08/07/前端构建工具介绍/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          前端构建工具介绍
-        
-      </div>
-    </a>
   
+    <a  href="/2017/09/29/object/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Object</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -378,7 +399,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#理解原型之间的关系"><span class="toc-number">1.</span> <span class="toc-text">理解原型之间的关系</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量和方法"><span class="toc-number">1.</span> <span class="toc-text">变量和方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类型"><span class="toc-number">1.1.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lodash相关技巧和实例"><span class="toc-number">1.2.</span> <span class="toc-text">lodash相关技巧和实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#附录"><span class="toc-number">1.3.</span> <span class="toc-text">附录</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -449,12 +470,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2017/08/07/前端构建工具介绍/" title="上一篇: 前端构建工具介绍">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
+            <a  href="/2017/09/29/object/" title="下一篇: Object">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/变量和方法/">变量和方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/object/">Object</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/个人插件/">个人插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/07/前端构建工具介绍/">前端构建工具介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/JavaScript-constructor/">原型函数Construction解析</a></li></ul>
