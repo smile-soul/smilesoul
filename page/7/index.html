@@ -12,7 +12,7 @@
   <meta name="description" content="Smilesoul blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Smilesoul">
-<meta property="og:url" content="http://smilesoul.cn/page/4/index.html">
+<meta property="og:url" content="http://smilesoul.cn/page/7/index.html">
 <meta property="og:site_name" content="Smilesoul">
 <meta property="og:description" content="Smilesoul blog">
 <meta property="og:locale" content="en">
@@ -278,11 +278,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-object" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-JavaScript-constructor" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2017/09/29/object/" class="article-date">
-      <time datetime="2017-09-29T13:52:18.000Z" itemprop="datePublished">2017-09-29</time>
+      <a  href="/2016/07/06/JavaScript-constructor/" class="article-date">
+      <time datetime="2016-07-06T12:54:16.000Z" itemprop="datePublished">2016-07-06</time>
 </a>
 
     </div>
@@ -296,7 +296,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2017/09/29/object/">Object</a>
+      <a  class="article-title" href="/2016/07/06/JavaScript-constructor/">原型函数Construction解析</a>
     </h1>
   
 
@@ -307,62 +307,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="Object属性："><a href="#Object属性：" class="headerlink" title="Object属性："></a>Object属性：</h3><hr>
-<ol>
-<li>configurable: true<ul>
-<li>能否用delete删除属性</li>
-<li>能否修改属性的特性</li>
-<li>能否把属性修改为访问器属性</li>
-</ul>
-</li>
-<li>enumerable: true<ul>
-<li>能否用for-in循环返回属性（是否可枚举）</li>
-</ul>
-</li>
-<li>writable：true<ul>
-<li>能否修改属性的值</li>
-</ul>
-</li>
-<li>value：undefined<ul>
-<li>包含这个属性的数据</li>
-</ul>
-</li>
-<li><p>Object.defineProperty(obj, ‘name’, {}) (ES5)</p>
- <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">Object.defineProperty(obj,</span> <span class="string">'key'</span><span class="string">,</span> <span class="string">&#123;</span></div><div class="line">	<span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span></div><div class="line">	<span class="attr">configurable:</span> <span class="literal">false</span><span class="string">,</span></div><div class="line">	<span class="attr">writable:</span> <span class="literal">false</span><span class="string">,</span></div><div class="line">	<span class="attr">value:</span> <span class="string">'static'</span></div><div class="line"><span class="string">&#125;);</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>Object.defineProperty(obj, {})</p>
- <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="string">const</span> <span class="string">obj</span> <span class="string">=</span> <span class="string">&#123;&#125;;</span></div><div class="line"><span class="string">Object.defineProperties(obj,</span> <span class="string">&#123;</span></div><div class="line">	<span class="string">"property1"</span><span class="string">:</span> <span class="string">&#123;</span></div><div class="line">		<span class="attr">value:</span> <span class="literal">true</span><span class="string">,</span></div><div class="line">		<span class="attr">writable:</span> <span class="literal">true</span></div><div class="line">	<span class="string">&#125;,</span>	</div><div class="line">	<span class="string">"property2"</span><span class="string">:</span> <span class="string">&#123;</span></div><div class="line">		<span class="attr">value:</span> <span class="string">"Hello"</span><span class="string">,</span></div><div class="line">		<span class="attr">writable:</span> <span class="literal">false</span></div><div class="line">		<span class="string">&#125;</span></div><div class="line">	<span class="string">&#125;);</span>	</div><div class="line"></div><div class="line"><span class="string">cosnt</span> <span class="string">obj</span> <span class="string">=</span> <span class="string">&#123;&#125;;</span></div><div class="line"><span class="string">Object.defineProperty(obj,</span> <span class="string">'key'</span><span class="string">,</span> <span class="string">&#123;&#125;);</span></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(obj,</span> <span class="string">'key'</span><span class="string">);</span>			</div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">Object</span> <span class="string">&#123;</span></div><div class="line">	<span class="attr">value:</span> <span class="string">undefined,</span> </div><div class="line">	<span class="attr">writable:</span> <span class="literal">false</span><span class="string">,</span> </div><div class="line">	<span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span> </div><div class="line">	<span class="attr">configurable:</span> <span class="literal">false</span><span class="string">&#125;</span></div><div class="line">	</div><div class="line"><span class="string">//</span> <span class="string">注意：在这样定义时候，非定义的configurable等为false</span></div><div class="line"><span class="string">obj.name</span> <span class="string">=</span> <span class="string">'lty'</span><span class="string">;</span></div><div class="line"><span class="string">//这样定义的时候，configurable等才为true</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>一旦把configurable设为false，就不能设回成true，即一切配置都不可使用。</p>
-</li>
-</ol>
-<hr>
-<h3 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h3><ol>
-<li>configurable: true<ul>
-<li>能否用delete删除属性</li>
-<li>能否修改属性的特性</li>
-<li>能否把属性修改为访问器属性</li>
-</ul>
-</li>
-<li>enumerable: true<ul>
-<li>能否用for-in循环返回属性（是否可枚举）</li>
-</ul>
-</li>
-<li>get: undefined<ul>
-<li>读取数据时候调用</li>
-</ul>
-</li>
-<li>set：undefined<ul>
-<li>写入属性时候调用</li>
-</ul>
-</li>
-<li>访问器属性不能直接定义，只能使用Object.defineProperty()来定义</li>
-<li><p>因为 primitive 是 immutable 的,所以赋值分配新的内存,即为写入</p>
- <figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> book = &#123;</div><div class="line">	_year: <span class="number">2004</span>,</div><div class="line">	edition: <span class="number">1</span>,</div><div class="line">&#125;</div><div class="line"><span class="built_in">Object</span>.defineProperty(book, <span class="string">'year'</span>, &#123;</div><div class="line">	<span class="keyword">get</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>._year,</div><div class="line">	<span class="keyword">set</span>: <span class="function"><span class="params">newline</span> =&gt;</span> &#123;</div><div class="line">		<span class="keyword">if</span>	(newline &gt; <span class="number">2000</span>) &#123;</div><div class="line">			<span class="keyword">this</span>._year = newline;</div><div class="line">			<span class="keyword">this</span>.edition += <span class="number">1</span>;</div><div class="line">		&#125;;</div><div class="line">	&#125;,</div><div class="line">&#125;)</div><div class="line">book.year = <span class="number">2005</span>;</div><div class="line"><span class="built_in">console</span>.log(edition);</div><div class="line"><span class="comment">// output: 2</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>浏览器中一般是使用<em>defineGetter</em>和<em>defineSetter</em>来代替    </p>
-</li>
-</ol>
+        <h3 id="理解原型之间的关系"><a href="#理解原型之间的关系" class="headerlink" title="理解原型之间的关系"></a>理解原型之间的关系</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">testOne() &#123;&#125;;</div><div class="line">testOne.prototype</div><div class="line"><span class="comment">// Object &#123;</span></div><div class="line"><span class="symbol">        constructor:</span> a()</div><div class="line"><span class="symbol">                arguments:</span> null</div><div class="line"><span class="symbol">                caller:</span> null</div><div class="line"><span class="symbol">                length:</span> <span class="number">0</span></div><div class="line"><span class="symbol">                name:</span><span class="string">"a"</span></div><div class="line"><span class="symbol">                prototype:</span> Object</div><div class="line"><span class="symbol">                __proto__:</span> ()</div><div class="line">                <span class="params">&lt;function scope&gt;</span></div><div class="line">                <span class="comment">//注意层级关系</span></div><div class="line"><span class="symbol">        __proto__:</span> Object</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">testOne.length</div><div class="line"><span class="comment">// output: 0</span></div><div class="line"></div><div class="line"></div><div class="line">testOne.prototype.name = <span class="string">'2'</span>;</div><div class="line">testOne.name</div><div class="line"><span class="comment">// output: 'a';</span></div></pre></td></tr></table></figure>
+<p><strong>注意</strong>: 这里输出为’a’，而不是２，它会去查constructor里面的name，因为prototype.constructor是会指回testOne，如果要获取＇２＇，只能testOne.prototype.name来获取.</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> testTwo = <span class="keyword">new</span> testOne();</div><div class="line">testTwo.prototype</div><div class="line"><span class="comment">//output: undefined</span></div></pre></td></tr></table></figure>
+<p><strong>注意</strong>: 每创建一个函数才会创建它的prototype对象，使用new，不会创建prototype对象</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="string">testTwo.constructor</span></div><div class="line"><span class="string">//output:</span> <span class="string">testOne()&#123;&#125;</span></div><div class="line"></div><div class="line"><span class="string">testTwo.constructor.name</span> <span class="string">=</span> <span class="string">'b'</span><span class="string">;</span></div><div class="line"><span class="string">testTwo.name</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">testTwo</span></div><div class="line"></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(ｔｅｓｔTwo,</span> <span class="string">'name'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;value:</span> <span class="string">"testTwo"</span><span class="string">,</span> <span class="attr">writable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span><span class="string">&#125;</span></div></pre></td></tr></table></figure>
+<p>所有原声的只可以delete，之后testOne.name输出为＇＇，不能修改.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">testTwo.constructor.names</span> <span class="string">=</span> <span class="string">'c'</span><span class="string">;</span></div><div class="line"><span class="string">testTwo.names</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">c</span></div><div class="line"></div><div class="line"><span class="string">Object,getOwnPropertyDescriptor(testTwo,</span> <span class="string">'names'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;value:</span> <span class="string">"c"</span><span class="string">,</span> <span class="attr">writable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span><span class="string">&#125;</span></div></pre></td></tr></table></figure>
+<p>非原生的属性，添加之后可以修改,所以在执行new操作时，将tetTwo的指针指向了testTwo.constructor</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">testOne.prototype.newOne = <span class="string">'5'</span>;</div><div class="line">testTwo.newOne</div><div class="line"><span class="comment">// output: '5'</span></div><div class="line">testTwo.newOne = <span class="string">'6'</span>;</div><div class="line">testTwo.newOne</div><div class="line"><span class="comment">// output: '6'</span></div><div class="line">testTwo</div><div class="line"><span class="comment">// output: </span></div><div class="line"><span class="symbol">    bbb:</span><span class="string">"444"</span></div><div class="line"><span class="symbol">    __proto__:</span>	Object</div><div class="line"><span class="symbol">        bbb:</span> <span class="string">"2"</span></div><div class="line"><span class="symbol">        constructor:</span> d()</div><div class="line">        ＿_proto__: Object</div></pre></td></tr></table></figure>
+<p>newOne　屏蔽掉了原属性，因为将怎么testOne的指针指＿proto＿</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Object.keys(testTwo);</div><div class="line"><span class="regexp">//</span> output: [<span class="string">'bbb'</span>]</div></pre></td></tr></table></figure>
+<p>这也是为什么Object.keys只出现bbb，因为＿proto＿，constructor不可枚举.</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">name</span>()<span class="comment">&#123;&#125;</span>;</div><div class="line"><span class="keyword">name</span>.prototype;</div><div class="line"><span class="comment">// output: constructor: name()</span></div><div class="line">            __proto__:<span class="keyword">Object</span>               </div><div class="line"><span class="keyword">const</span> nameTwo()<span class="comment">&#123;&#125;</span>;</div><div class="line">nameTwo.prototype = <span class="comment">&#123;&#125;</span>;</div><div class="line">nameTwo.prototype;</div><div class="line"><span class="comment">// output: __proto__:Object</span></div></pre></td></tr></table></figure>
+<p>这也切断了与原型之间的联系，constructor变成了＿ｐｒｏｔｏ＿的属性</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">const</span> <span class="string">nameThree()&#123;&#125;;</span></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(nameThree.prototype,</span> <span class="string">'constructor'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;</span> <span class="attr">writable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span> <span class="string">&#125;</span></div><div class="line"><span class="string">nameThree.prototype</span> <span class="string">=</span> <span class="string">&#123;</span> <span class="attr">constructor:</span> <span class="string">nameThree&#125;;</span></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(nameThree.prototype,</span> <span class="string">'constructor'</span><span class="string">);</span></div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">&#123;writable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">enumerable:</span> <span class="literal">true</span><span class="string">,</span> <span class="attr">configurable:</span> <span class="literal">true</span><span class="string">&#125;</span></div></pre></td></tr></table></figure>
+<p>操作prototype会使，constructor消失，如果手动改变，这会使constructor种的enumerable变成true（即可枚举）    </p>
 
       
     </div>
@@ -401,7 +361,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
     </nav>
   
 
