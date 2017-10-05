@@ -278,11 +278,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-object" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-变量和方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2017/09/29/object/" class="article-date">
-      <time datetime="2017-09-29T13:52:18.000Z" itemprop="datePublished">2017-09-29</time>
+      <a  href="/2017/09/29/变量和方法/" class="article-date">
+      <time datetime="2017-09-29T13:55:13.000Z" itemprop="datePublished">2017-09-29</time>
 </a>
 
     </div>
@@ -296,7 +296,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2017/09/29/object/">Object</a>
+      <a  class="article-title" href="/2017/09/29/变量和方法/">变量和方法</a>
     </h1>
   
 
@@ -307,62 +307,47 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="Object属性："><a href="#Object属性：" class="headerlink" title="Object属性："></a>Object属性：</h3><hr>
-<ol>
-<li>configurable: true<ul>
-<li>能否用delete删除属性</li>
-<li>能否修改属性的特性</li>
-<li>能否把属性修改为访问器属性</li>
+        <h3 id="变量和方法"><a href="#变量和方法" class="headerlink" title="变量和方法"></a>变量和方法</h3><hr>
+<h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><ul>
+<li>js的变量中只用primitive类型和object类型</li>
+<li><p>平时使用的字符串应该是primitive类型，应该是not an object and has no methods</p>
+ <figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="built_in">str</span> = <span class="string">'hello'</span>;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">str</span>.charAt(<span class="number">0</span>));</div><div class="line"><span class="comment">// output: h</span></div><div class="line"><span class="keyword">Object</span>.prototype.toString.call(<span class="built_in">str</span>)</div><div class="line"><span class="comment">// output: [object String]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>出现这样的情况，因为str.charAt时候，String(primitive)转换成了String(object)类型在<a href="http://www.ecma-international.org/ecma-262/5.1/#sec-8.7" target="_blank" rel="external">ECMAScript Language Specification&amp;8.7.1</a> 明确指出变量类型的转换</p>
+</li>
+<li>所以primitive类型的value是immutable的，而variable是mutable的，对与primitive类型的变量，为其赋值，本质上就是让变量指向新的内存。</li>
 </ul>
-</li>
-<li>enumerable: true<ul>
-<li>能否用for-in循环返回属性（是否可枚举）</li>
-</ul>
-</li>
-<li>writable：true<ul>
-<li>能否修改属性的值</li>
-</ul>
-</li>
-<li>value：undefined<ul>
-<li>包含这个属性的数据</li>
-</ul>
-</li>
-<li><p>Object.defineProperty(obj, ‘name’, {}) (ES5)</p>
- <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">Object.defineProperty(obj,</span> <span class="string">'key'</span><span class="string">,</span> <span class="string">&#123;</span></div><div class="line">	<span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span></div><div class="line">	<span class="attr">configurable:</span> <span class="literal">false</span><span class="string">,</span></div><div class="line">	<span class="attr">writable:</span> <span class="literal">false</span><span class="string">,</span></div><div class="line">	<span class="attr">value:</span> <span class="string">'static'</span></div><div class="line"><span class="string">&#125;);</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>Object.defineProperty(obj, {})</p>
- <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="string">const</span> <span class="string">obj</span> <span class="string">=</span> <span class="string">&#123;&#125;;</span></div><div class="line"><span class="string">Object.defineProperties(obj,</span> <span class="string">&#123;</span></div><div class="line">	<span class="string">"property1"</span><span class="string">:</span> <span class="string">&#123;</span></div><div class="line">		<span class="attr">value:</span> <span class="literal">true</span><span class="string">,</span></div><div class="line">		<span class="attr">writable:</span> <span class="literal">true</span></div><div class="line">	<span class="string">&#125;,</span>	</div><div class="line">	<span class="string">"property2"</span><span class="string">:</span> <span class="string">&#123;</span></div><div class="line">		<span class="attr">value:</span> <span class="string">"Hello"</span><span class="string">,</span></div><div class="line">		<span class="attr">writable:</span> <span class="literal">false</span></div><div class="line">		<span class="string">&#125;</span></div><div class="line">	<span class="string">&#125;);</span>	</div><div class="line"></div><div class="line"><span class="string">cosnt</span> <span class="string">obj</span> <span class="string">=</span> <span class="string">&#123;&#125;;</span></div><div class="line"><span class="string">Object.defineProperty(obj,</span> <span class="string">'key'</span><span class="string">,</span> <span class="string">&#123;&#125;);</span></div><div class="line"><span class="string">Object.getOwnPropertyDescriptor(obj,</span> <span class="string">'key'</span><span class="string">);</span>			</div><div class="line"><span class="string">//</span> <span class="attr">output:</span> <span class="string">Object</span> <span class="string">&#123;</span></div><div class="line">	<span class="attr">value:</span> <span class="string">undefined,</span> </div><div class="line">	<span class="attr">writable:</span> <span class="literal">false</span><span class="string">,</span> </div><div class="line">	<span class="attr">enumerable:</span> <span class="literal">false</span><span class="string">,</span> </div><div class="line">	<span class="attr">configurable:</span> <span class="literal">false</span><span class="string">&#125;</span></div><div class="line">	</div><div class="line"><span class="string">//</span> <span class="string">注意：在这样定义时候，非定义的configurable等为false</span></div><div class="line"><span class="string">obj.name</span> <span class="string">=</span> <span class="string">'lty'</span><span class="string">;</span></div><div class="line"><span class="string">//这样定义的时候，configurable等才为true</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>一旦把configurable设为false，就不能设回成true，即一切配置都不可使用。</p>
-</li>
-</ol>
 <hr>
-<h3 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h3><ol>
-<li>configurable: true<ul>
-<li>能否用delete删除属性</li>
-<li>能否修改属性的特性</li>
-<li>能否把属性修改为访问器属性</li>
+<h4 id="lodash相关技巧和实例"><a href="#lodash相关技巧和实例" class="headerlink" title="lodash相关技巧和实例"></a>lodash相关技巧和实例</h4><ul>
+<li><p>N次循环技巧</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">Array</span>.apply(<span class="literal">null</span>, <span class="built_in">Array</span>(<span class="number">5</span>)).forEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    &#125;);</div><div class="line">_.times(<span class="number">5</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>深层次查找属性</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">   const ownerArr = [&#123;</div><div class="line"><span class="string">"owner"</span>: <span class="string">"Colin"</span>,</div><div class="line"> 	<span class="string">"pets"</span>: [&#123;<span class="string">"name"</span>:<span class="string">"dog1"</span>&#125;, &#123;<span class="string">"name"</span>: <span class="string">"dog2"</span>&#125;]</div><div class="line">   &#125;, &#123;</div><div class="line">       <span class="string">"owner"</span>: <span class="string">"John"</span>,</div><div class="line">       <span class="string">"pets"</span>: [&#123;<span class="string">"name"</span>:<span class="string">"dog3"</span>&#125;, &#123;<span class="string">"name"</span>: <span class="string">"dog4"</span>&#125;]</div><div class="line">   &#125;];</div><div class="line"></div><div class="line">   ownerArr.<span class="keyword">map</span>(owner =&gt; &#123;</div><div class="line">       return owner.pets[<span class="number">0</span>].name;</div><div class="line">       &#125;);</div><div class="line"></div><div class="line">   <span class="number">_</span>.<span class="keyword">map</span>(ownerArr, <span class="string">'pets[0].name'</span>);</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<ul>
+<li><p>数组独立</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Array</span>.apply(<span class="literal">null</span>, <span class="keyword">Array</span>(<span class="number">6</span>)).map( (item, index) =&gt; &#123;</div><div class="line"><span class="keyword">return</span> <span class="string">"ball_"</span> + index;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="literal">_</span>.times(<span class="number">6</span>, <span class="literal">_</span>.uniqueId.bind(<span class="literal">null</span>, <span class="string">'ball_'</span>));</div><div class="line"></div><div class="line"><span class="literal">_</span>.times(<span class="number">6</span>, <span class="literal">_</span>.partial(<span class="literal">_</span>.uniqueId, <span class="string">'ball_'</span>));</div><div class="line"><span class="comment">// output: [ball_0, ball_1, ball_2, ball_3, ball_4, ball_5]</span></div></pre></td></tr></table></figure>
 </li>
-<li>enumerable: true<ul>
-<li>能否用for-in循环返回属性（是否可枚举）</li>
+<li><p>对象扩展(可以直接用Object.assgin(), 底层一样的实现）</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">     Object.prototype.extend = obj =&gt; &#123;</div><div class="line">	<span class="keyword">for</span> (let i <span class="keyword">in</span> obj) &#123;</div><div class="line">  		<span class="keyword">if</span> (obj.hasOwnProperty(i)) &#123;</div><div class="line">    		this[i] = obj[i]<span class="comment">;</span></div><div class="line">  		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;<span class="comment">;</span></div><div class="line">    <span class="keyword">const</span> objA = &#123;<span class="string">"name"</span>: <span class="string">"colin"</span>, <span class="string">"car"</span>: <span class="string">"suzuki"</span>&#125;<span class="comment">;</span></div><div class="line">    <span class="keyword">const</span> objB = &#123;<span class="string">"name"</span>: <span class="string">"james"</span>, <span class="string">"age"</span>: <span class="number">17</span>&#125;<span class="comment">;</span></div><div class="line"></div><div class="line">    objA.extend(objB)<span class="comment">;</span></div><div class="line">    console.<span class="built_in">log</span>(objA)<span class="comment">; </span></div><div class="line">    // &#123;<span class="string">"name"</span>: <span class="string">"james"</span>, <span class="string">"age"</span>: <span class="number">17</span>, <span class="string">"car"</span>: <span class="string">"suzuki"</span>&#125;<span class="comment">;</span></div><div class="line"></div><div class="line">    _.<span class="built_in">assign</span>(objA, objB)<span class="comment">;</span></div><div class="line">    // &#123;<span class="string">"name"</span>: <span class="string">"james"</span>, <span class="string">"age"</span>: <span class="number">17</span>, <span class="string">"car"</span>: <span class="string">"suzuki"</span>&#125;<span class="comment">;</span></div><div class="line"></div><div class="line">    // ES6</div><div class="line">    Objetct.<span class="built_in">assign</span>(&#123;&#125;, objA, objB)<span class="comment">;</span></div><div class="line">    // &#123;<span class="string">"name"</span>: <span class="string">"james"</span>, <span class="string">"age"</span>: <span class="number">17</span>, <span class="string">"car"</span>: <span class="string">"suzuki"</span>&#125;<span class="comment">;</span></div><div class="line">    //_.<span class="built_in">assign</span> 是浅拷贝，所以会覆盖name</div></pre></td></tr></table></figure>
+</li>
+<li><p>补充作用域：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">test</span> = '1';</div><div class="line">testOne() &#123;</div><div class="line">    <span class="keyword">return</span> testTwo&#123;</div><div class="line">        cosole.<span class="built_in">log</span>(<span class="keyword">test</span>);</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">const</span> <span class="keyword">test</span> = '2';</div><div class="line">&#125;</div><div class="line">testOne()();</div><div class="line"><span class="comment">// output: undefined </span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">test</span> = '1';</div><div class="line">testOne() &#123;</div><div class="line">    <span class="keyword">return</span> testTwo&#123;</div><div class="line">        console.<span class="built_in">log</span>(<span class="keyword">test</span>);</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">test</span> = '2';</div><div class="line">&#125;</div><div class="line"><span class="comment">// output: 1;</span></div></pre></td></tr></table></figure>
+<p>因为重新定义了const，他在搜索作用域时候，会自上到下搜索<strong>声明</strong>的变量，如果没有声明，查找才会进去下一层，此处输出undefined，因为在testOne（）里面const之前就使用了test，所以就输出了undefined,而在第二个例子里面没有声明test，所以他就跳转出去，去下一层寻找test，即输出为1</p>
+<ul>
+<li>作用域提升</li>
 </ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="number">1</span>;</div><div class="line">b()&#123;</div><div class="line">    <span class="keyword">const</span> a = b = <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(a, b);</div><div class="line"><span class="comment">// 抛出异常，因为ｂ没有定义</span></div><div class="line"></div><div class="line">b();</div><div class="line">console.<span class="built_in">log</span>(a, b);</div><div class="line"><span class="comment">//output: 1,2;</span></div><div class="line"><span class="comment">// const a = b = 2 等价于　在全局声明const b = 2; 内部声明const a = b;因为=运算符是重右像左运算的</span></div></pre></td></tr></table></figure>
 </li>
-<li>get: undefined<ul>
-<li>读取数据时候调用</li>
 </ul>
-</li>
-<li>set：undefined<ul>
-<li>写入属性时候调用</li>
+<hr>
+<h4 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h4><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank" rel="external">MDN连接文档</a></li>
+<li><a href="http://colintoh.com/blog/lodash-10-javascript-utility-functions-stop-rewriting" target="_blank" rel="external">lodash相关技巧</a></li>
+<li><a href="https://www.sitepoint.com/lodash-features-replace-es6/" target="_blank" rel="external">10个ES6可以代替lodash的方法</a></li>
 </ul>
-</li>
-<li>访问器属性不能直接定义，只能使用Object.defineProperty()来定义</li>
-<li><p>因为 primitive 是 immutable 的,所以赋值分配新的内存,即为写入</p>
- <figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> book = &#123;</div><div class="line">	_year: <span class="number">2004</span>,</div><div class="line">	edition: <span class="number">1</span>,</div><div class="line">&#125;</div><div class="line"><span class="built_in">Object</span>.defineProperty(book, <span class="string">'year'</span>, &#123;</div><div class="line">	<span class="keyword">get</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>._year,</div><div class="line">	<span class="keyword">set</span>: <span class="function"><span class="params">newline</span> =&gt;</span> &#123;</div><div class="line">		<span class="keyword">if</span>	(newline &gt; <span class="number">2000</span>) &#123;</div><div class="line">			<span class="keyword">this</span>._year = newline;</div><div class="line">			<span class="keyword">this</span>.edition += <span class="number">1</span>;</div><div class="line">		&#125;;</div><div class="line">	&#125;,</div><div class="line">&#125;)</div><div class="line">book.year = <span class="number">2005</span>;</div><div class="line"><span class="built_in">console</span>.log(edition);</div><div class="line"><span class="comment">// output: 2</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>浏览器中一般是使用<em>defineGetter</em>和<em>defineSetter</em>来代替    </p>
-</li>
-</ol>
 
       
     </div>
@@ -401,7 +386,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
