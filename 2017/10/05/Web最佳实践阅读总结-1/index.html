@@ -18,7 +18,7 @@
 <meta property="og:description" content="介绍 最近开始刷一些书和题,此系列是介绍在读Web最佳实践的一些收获和体会。 web前端发展现状 存在问题： 代码组织混乱 代码格式的问题突出 页面布局随意 网站整体性能差，没有意识到应用诸如缓存，动态加载，脚本压缩，图片压缩等提高性能技术   推荐做法： 压缩样式表和脚本文件 减少HTTP请求次数 简洁和符合W3C标准的HTML和CSS代码能减少浏览器解析的时间，加快渲染过程 页面请求数量越少，">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ou42j47mq.bkt.clouddn.com/2017-10-05-webbest.jpg">
-<meta property="og:updated_time" content="2017-10-07T12:42:02.000Z">
+<meta property="og:updated_time" content="2017-10-07T13:14:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web最佳实践阅读总结(1)">
 <meta name="twitter:description" content="介绍 最近开始刷一些书和题,此系列是介绍在读Web最佳实践的一些收获和体会。 web前端发展现状 存在问题： 代码组织混乱 代码格式的问题突出 页面布局随意 网站整体性能差，没有意识到应用诸如缓存，动态加载，脚本压缩，图片压缩等提高性能技术   推荐做法： 压缩样式表和脚本文件 减少HTTP请求次数 简洁和符合W3C标准的HTML和CSS代码能减少浏览器解析的时间，加快渲染过程 页面请求数量越少，">
@@ -347,10 +347,10 @@
 <li>引入外部js脚本文件时，如果放入html的head中,则页面加载前该js脚本就会被加载入页面，而放入body中，则会按照页面从上倒下的加载顺序来运行javascript的代码，所以可以把js外部引入的文件放到页面底部，来让js最后引入，从而加快页面加载速度</li>
 </ul>
 </li>
-<li><p>动态加载</p>
-  <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line">&lt;scrī<span class="keyword">pt</span> src=<span class="string">''</span> id=<span class="string">"s1"</span>&gt;&lt;/scrī<span class="keyword">pt</span>&gt; </div><div class="line">&lt;scrī<span class="keyword">pt</span> <span class="keyword">language</span>=<span class="string">"javascrīpt"</span>&gt; </div><div class="line">s1.src=<span class="string">"test.js"</span> </div><div class="line">&lt;/scrī<span class="keyword">pt</span>&gt;</div></pre></td></tr></table></figure>
+<li>动态加载  <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line">&lt;scrī<span class="keyword">pt</span> src=<span class="string">''</span> id=<span class="string">"s1"</span>&gt;&lt;/scrī<span class="keyword">pt</span>&gt; </div><div class="line">&lt;scrī<span class="keyword">pt</span> <span class="keyword">language</span>=<span class="string">"javascrīpt"</span>&gt; </div><div class="line">s1.src=<span class="string">"test.js"</span> </div><div class="line">&lt;/scrī<span class="keyword">pt</span>&gt;</div></pre></td></tr></table></figure>
 </li>
-<li><h5 id="前端代码重构"><a href="#前端代码重构" class="headerlink" title="前端代码重构"></a>前端代码重构</h5></li>
+</ul>
+<h5 id="前端代码重构"><a href="#前端代码重构" class="headerlink" title="前端代码重构"></a>前端代码重构</h5><ul>
 <li>删除无用代码，精简代码（不起作用的CSS样式和废弃的JavaScript函数）</li>
 <li>前端代码规范化，把CSS代码放到独立的文件中，在JS定义局部变量，把部分全局变量改变成局部变量</li>
 <li>前端代码模块化，引入面向对象的思想来重构JavaScript代码，进一步明确公有接口和私有接口</li>
@@ -368,10 +368,9 @@
 <li>重构的目的和范围要明确，提高代码的可维护性，可读性和性能</li>
 <li>最好先易后难，循序渐进。先修改诸如命名，格式等不涉及具体逻辑的内容</li>
 <li>重构过程中要持续测试，在多个浏览器测试，确保重构的部分功能正确。切记大量重构后再进行测试，因为大量重构后基本很难记得重构的逻辑，也可能遗漏部分测试用例</li>
-<li>性能提升，先进行检测网站的整体性能并量化，找出性能瓶颈。重构过程中要持续监控性能，并进行对比</li>
+<li>性能提升，先进行检测网站的整体性能并量化，找出性能瓶颈。重构过程中要持续监控性能，并进行对比<h5 id="前端框架的使用"><a href="#前端框架的使用" class="headerlink" title="前端框架的使用"></a>前端框架的使用</h5></li>
 </ul>
 </li>
-<li><h5 id="前端框架的使用"><a href="#前端框架的使用" class="headerlink" title="前端框架的使用"></a>前端框架的使用</h5></li>
 <li>项目需求<ul>
 <li>调查项目是否需要AJAX操作</li>
 <li>是否需要模块化</li>
@@ -382,8 +381,7 @@
 </ul>
 </li>
 <li>项目的特点</li>
-<li>框架的特点</li>
-<li><h5 id="HTML5兼容"><a href="#HTML5兼容" class="headerlink" title="HTML5兼容"></a>HTML5兼容</h5></li>
+<li>框架的特点<h5 id="HTML5兼容"><a href="#HTML5兼容" class="headerlink" title="HTML5兼容"></a>HTML5兼容</h5></li>
 <li>编写高质量，标准的HTML（标准校验工具，JSLint）</li>
 <li>明确浏览器支持范围<ul>
 <li>Chrome和Safari（Webkit内核）IE Tester（IE兼容测试工具）IE9(IE DevToolbar)</li>
@@ -400,10 +398,9 @@
 <li>新标签的兼容，CSS3的兼容，新增的API（使用html5shiv框架）</li>
 <li>CSS3本身不支持，会直接忽略</li>
 <li>新增加的接口的使用，必须添加条件判断（Modernizr）</li>
-<li>多看Can I use</li>
+<li>多看Can I use<h5 id="web性能分析"><a href="#web性能分析" class="headerlink" title="web性能分析"></a>web性能分析</h5></li>
 </ul>
 </li>
-<li><h5 id="web性能分析"><a href="#web性能分析" class="headerlink" title="web性能分析"></a>web性能分析</h5></li>
 <li>YSlow，pagespeed<ul>
 <li>基于不同的规则评定网站整体性能评分</li>
 <li>给出提高网页性能的建议</li>
@@ -416,10 +413,9 @@
 <li>Network中可以查看各资源请求和下载所用的时间</li>
 <li>Timeline可以查看网页渲染和交互过程中个步骤所花费的时间，从资源到JS的解析执行，样式的应用和绘制</li>
 <li>Profiles中可以查看网页的CPU及内存占有情况报告</li>
-<li>Audits中提供了各种资源和配置优化的建议和未使用CSS规则的列表</li>
+<li>Audits中提供了各种资源和配置优化的建议和未使用CSS规则的列表<h5 id="代码和资源的压缩和合并"><a href="#代码和资源的压缩和合并" class="headerlink" title="代码和资源的压缩和合并"></a>代码和资源的压缩和合并</h5></li>
 </ul>
 </li>
-<li><h5 id="代码和资源的压缩和合并"><a href="#代码和资源的压缩和合并" class="headerlink" title="代码和资源的压缩和合并"></a>代码和资源的压缩和合并</h5></li>
 <li>加快代码和资源文件传输的方式<ul>
 <li>CDN分发</li>
 <li>缓存</li>
@@ -456,7 +452,7 @@
         <p><span>本文标题:</span><a  href="/2017/10/05/Web最佳实践阅读总结-1/">Web最佳实践阅读总结(1)</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Smilesoul 的个人博客">Smilesoul</a></p>
         <p><span>发布时间:</span>2017年10月05日 - 23时11分</p>
-        <p><span>最后更新:</span>2017年10月07日 - 20时42分</p>
+        <p><span>最后更新:</span>2017年10月07日 - 21时14分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/10/05/Web最佳实践阅读总结-1/" title="Web最佳实践阅读总结(1)">http://smilesoul.cn/2017/10/05/Web最佳实践阅读总结-1/</a>
             <span class="copy-path" data-clipboard-text="原文: http://smilesoul.cn/2017/10/05/Web最佳实践阅读总结-1/　　作者: Smilesoul" title=""></span>
