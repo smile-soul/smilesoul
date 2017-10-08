@@ -9,20 +9,21 @@
   
   <title>Web最佳实践阅读总结(1) | Smilesoul</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="介绍 最近开始刷一些书和题,此系列是介绍在读Web最佳实践的一些收获和体会。 web前端发展现状 存在问题： 代码组织混乱 代码格式的问题突出 页面布局随意 网站整体性能差，没有意识到应用诸如缓存，动态加载，脚本压缩，图片压缩等提高性能技术   推荐做法： 压缩样式表和脚本文件 减少HTTP请求次数 简洁和符合W3C标准的HTML和CSS代码能减少浏览器解析的时间，加快渲染过程 页面请求数量越少，">
+  <meta name="description" content="介绍 最近开始刷一些书和题,此系列是介绍在读Web最佳实践的一些收获和体会。 web前端发展现状 存在问题： 代码组织混乱 代码格式的问题突出 页面布局随意 网站整体性能差，没有意识到应用诸如缓存，动态加载，脚本压缩，图片压缩等提高性能技术   推荐做法： 压缩样式表和脚本文件 减少HTTP请求次数 简洁和符合W3C标准的HTML和CSS代码能减少浏览器解析的时间，加快渲染过程 页面请求数量越少">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web最佳实践阅读总结(1)">
 <meta property="og:url" content="http://smilesoul.cn/2017/10/05/Web最佳实践阅读总结-1/index.html">
 <meta property="og:site_name" content="Smilesoul">
-<meta property="og:description" content="介绍 最近开始刷一些书和题,此系列是介绍在读Web最佳实践的一些收获和体会。 web前端发展现状 存在问题： 代码组织混乱 代码格式的问题突出 页面布局随意 网站整体性能差，没有意识到应用诸如缓存，动态加载，脚本压缩，图片压缩等提高性能技术   推荐做法： 压缩样式表和脚本文件 减少HTTP请求次数 简洁和符合W3C标准的HTML和CSS代码能减少浏览器解析的时间，加快渲染过程 页面请求数量越少，">
+<meta property="og:description" content="介绍 最近开始刷一些书和题,此系列是介绍在读Web最佳实践的一些收获和体会。 web前端发展现状 存在问题： 代码组织混乱 代码格式的问题突出 页面布局随意 网站整体性能差，没有意识到应用诸如缓存，动态加载，脚本压缩，图片压缩等提高性能技术   推荐做法： 压缩样式表和脚本文件 减少HTTP请求次数 简洁和符合W3C标准的HTML和CSS代码能减少浏览器解析的时间，加快渲染过程 页面请求数量越少">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://badge.juejin.im/entry/59d9c9dcf265da06456da777/likes.svg?style=flat-square">
 <meta property="og:image" content="http://ou42j47mq.bkt.clouddn.com/2017-10-05-webbest.jpg">
-<meta property="og:updated_time" content="2017-10-08T06:45:13.999Z">
+<meta property="og:updated_time" content="2017-10-08T06:47:10.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web最佳实践阅读总结(1)">
-<meta name="twitter:description" content="介绍 最近开始刷一些书和题,此系列是介绍在读Web最佳实践的一些收获和体会。 web前端发展现状 存在问题： 代码组织混乱 代码格式的问题突出 页面布局随意 网站整体性能差，没有意识到应用诸如缓存，动态加载，脚本压缩，图片压缩等提高性能技术   推荐做法： 压缩样式表和脚本文件 减少HTTP请求次数 简洁和符合W3C标准的HTML和CSS代码能减少浏览器解析的时间，加快渲染过程 页面请求数量越少，">
-<meta name="twitter:image" content="http://ou42j47mq.bkt.clouddn.com/2017-10-05-webbest.jpg">
+<meta name="twitter:description" content="介绍 最近开始刷一些书和题,此系列是介绍在读Web最佳实践的一些收获和体会。 web前端发展现状 存在问题： 代码组织混乱 代码格式的问题突出 页面布局随意 网站整体性能差，没有意识到应用诸如缓存，动态加载，脚本压缩，图片压缩等提高性能技术   推荐做法： 压缩样式表和脚本文件 减少HTTP请求次数 简洁和符合W3C标准的HTML和CSS代码能减少浏览器解析的时间，加快渲染过程 页面请求数量越少">
+<meta name="twitter:image" content="https://badge.juejin.im/entry/59d9c9dcf265da06456da777/likes.svg?style=flat-square">
   
     <link rel="alternative" href="/atom.xml" title="Smilesoul" type="application/atom+xml">
   
@@ -321,7 +322,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><hr>
+        <p><a href="https://juejin.im/post/59d9c9b3f265da064d34b331" target="_blank" rel="external"><img src="https://badge.juejin.im/entry/59d9c9dcf265da06456da777/likes.svg?style=flat-square" alt=""></a></p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><hr>
 <p>最近开始刷一些书和题,此系列是介绍在读<code>Web最佳实践</code>的一些收获和体会。</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://ou42j47mq.bkt.clouddn.com/2017-10-05-webbest.jpg" alt=""></h2><h5 id="web前端发展现状"><a href="#web前端发展现状" class="headerlink" title="web前端发展现状"></a>web前端发展现状</h5><ul>
 <li>存在问题：<ul>
@@ -445,7 +447,7 @@
         <p><span>本文标题:</span><a  href="/2017/10/05/Web最佳实践阅读总结-1/">Web最佳实践阅读总结(1)</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Smilesoul 的个人博客">Smilesoul</a></p>
         <p><span>发布时间:</span>2017年10月05日 - 23时11分</p>
-        <p><span>最后更新:</span>2017年10月08日 - 14时45分</p>
+        <p><span>最后更新:</span>2017年10月08日 - 14时47分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/10/05/Web最佳实践阅读总结-1/" title="Web最佳实践阅读总结(1)">http://smilesoul.cn/2017/10/05/Web最佳实践阅读总结-1/</a>
             <span class="copy-path" data-clipboard-text="原文: http://smilesoul.cn/2017/10/05/Web最佳实践阅读总结-1/　　作者: Smilesoul" title=""></span>
