@@ -18,7 +18,7 @@
 <meta property="og:description" content="介绍 最近开始刷一些书和题,此系列是介绍在读Web最佳实践的一些收获和体会。 web前端发展现状 存在问题： 代码组织混乱 代码格式的问题突出 页面布局随意 网站整体性能差，没有意识到应用诸如缓存，动态加载，脚本压缩，图片压缩等提高性能技术   推荐做法： 压缩样式表和脚本文件 减少HTTP请求次数 简洁和符合W3C标准的HTML和CSS代码能减少浏览器解析的时间，加快渲染过程 页面请求数量越少，">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ou42j47mq.bkt.clouddn.com/2017-10-05-webbest.jpg">
-<meta property="og:updated_time" content="2017-10-08T06:42:40.348Z">
+<meta property="og:updated_time" content="2017-10-08T06:45:13.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web最佳实践阅读总结(1)">
 <meta name="twitter:description" content="介绍 最近开始刷一些书和题,此系列是介绍在读Web最佳实践的一些收获和体会。 web前端发展现状 存在问题： 代码组织混乱 代码格式的问题突出 页面布局随意 网站整体性能差，没有意识到应用诸如缓存，动态加载，脚本压缩，图片压缩等提高性能技术   推荐做法： 压缩样式表和脚本文件 减少HTTP请求次数 简洁和符合W3C标准的HTML和CSS代码能减少浏览器解析的时间，加快渲染过程 页面请求数量越少，">
@@ -340,14 +340,14 @@
 </ul>
 </li>
 <li><p>延迟加载</p>
-  <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">”text/javascript”</span> <span class="attr">src</span>=<span class="string">”</span>" <span class="attr">id</span>=<span class="string">”my”</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">”text/javascript”</span>&gt;</span><span class="undefined"> </span></div><div class="line"><span class="actionscript">setTimeout(“document.getElementById(‘my<span class="string">').src='</span><span class="meta"><span class="meta-keyword">include</span>/php100.php';</span> “,<span class="number">3000</span>);<span class="comment">//延时3秒 </span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">”text/javascript”</span> <span class="attr">src</span>=<span class="string">”</span>" <span class="attr">id</span>=<span class="string">”my”</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">”text/javascript”</span>&gt;</span><span class="undefined"> </span></div><div class="line"><span class="actionscript">setTimeout(“document.getElementById(‘my<span class="string">').src='</span><span class="meta"><span class="meta-keyword">include</span>/php100.php';</span> “,<span class="number">3000</span>);<span class="comment">//延时3秒 </span></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>最后加载</p>
 <ul>
 <li>引入外部js脚本文件时，如果放入html的head中,则页面加载前该js脚本就会被加载入页面，而放入body中，则会按照页面从上倒下的加载顺序来运行javascript的代码，所以可以把js外部引入的文件放到页面底部，来让js最后引入，从而加快页面加载速度</li>
 </ul>
 </li>
-<li>动态加载  <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line">&lt;scrī<span class="keyword">pt</span> src=<span class="string">''</span> id=<span class="string">"s1"</span>&gt;&lt;/scrī<span class="keyword">pt</span>&gt; </div><div class="line">&lt;scrī<span class="keyword">pt</span> <span class="keyword">language</span>=<span class="string">"javascrīpt"</span>&gt; </div><div class="line">s1.src=<span class="string">"test.js"</span> </div><div class="line">&lt;/scrī<span class="keyword">pt</span>&gt;</div></pre></td></tr></table></figure>
+<li>动态加载 <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line">&lt;scrī<span class="keyword">pt</span> src=<span class="string">''</span> id=<span class="string">"s1"</span>&gt;&lt;/scrī<span class="keyword">pt</span>&gt; </div><div class="line">&lt;scrī<span class="keyword">pt</span> <span class="keyword">language</span>=<span class="string">"javascrīpt"</span>&gt; </div><div class="line">s1.src=<span class="string">"test.js"</span> </div><div class="line">&lt;/scrī<span class="keyword">pt</span>&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h5 id="前端代码重构"><a href="#前端代码重构" class="headerlink" title="前端代码重构"></a>前端代码重构</h5><ul>
@@ -445,7 +445,7 @@
         <p><span>本文标题:</span><a  href="/2017/10/05/Web最佳实践阅读总结-1/">Web最佳实践阅读总结(1)</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Smilesoul 的个人博客">Smilesoul</a></p>
         <p><span>发布时间:</span>2017年10月05日 - 23时11分</p>
-        <p><span>最后更新:</span>2017年10月08日 - 14时42分</p>
+        <p><span>最后更新:</span>2017年10月08日 - 14时45分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/10/05/Web最佳实践阅读总结-1/" title="Web最佳实践阅读总结(1)">http://smilesoul.cn/2017/10/05/Web最佳实践阅读总结-1/</a>
             <span class="copy-path" data-clipboard-text="原文: http://smilesoul.cn/2017/10/05/Web最佳实践阅读总结-1/　　作者: Smilesoul" title=""></span>
