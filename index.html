@@ -367,16 +367,16 @@
 </ul>
 </li>
 <li>项目的特点</li>
-<li>框架的特点<h5 id="HTML5兼容"><a href="#HTML5兼容" class="headerlink" title="HTML5兼容"></a>HTML5兼容</h5></li>
-<li>编写高质量，标准的HTML（标准校验工具，JSLint）</li>
+<li>框架的特点<h5 id="代码质量"><a href="#代码质量" class="headerlink" title="代码质量"></a>代码质量</h5></li>
+<li>编写高质量，标准的HTML（标准校验工具，ESLint, Flow, JSDoc, ts）</li>
 <li>明确浏览器支持范围<ul>
-<li>Chrome和Safari（Webkit内核）IE Tester（IE兼容测试工具）IE9(IE DevToolbar)</li>
+<li>Chrome和Safari  IE Tester（IE兼容测试工具</li>
 </ul>
 </li>
 <li>避免浏览器兼容性的问题<ul>
 <li>先考虑更改方案，使用没有兼容问题的代码</li>
 <li>考虑如何兼容的问题</li>
-<li>兼容IE，使用IE特有的条件表达式</li>
+<li>兼容IE，使用IE特有的条件表达式(hack)</li>
 <li>让兼容的代码独立，提高代码的可维护性</li>
 </ul>
 </li>
@@ -395,36 +395,30 @@
 <li>相关性能分析工具集：Smush.it</li>
 </ul>
 </li>
-<li>Chrome开发工具中有Network，Timeline，Profiles，Aidits<ul>
+<li>Chrome开发工具<ul>
 <li>Network中可以查看各资源请求和下载所用的时间</li>
 <li>Timeline可以查看网页渲染和交互过程中个步骤所花费的时间，从资源到JS的解析执行，样式的应用和绘制</li>
 <li>Profiles中可以查看网页的CPU及内存占有情况报告</li>
-<li>Audits中提供了各种资源和配置优化的建议和未使用CSS规则的列表<h5 id="代码和资源的压缩和合并"><a href="#代码和资源的压缩和合并" class="headerlink" title="代码和资源的压缩和合并"></a>代码和资源的压缩和合并</h5></li>
+<li>Audits中提供了各种资源和配置优化的建议和未使用CSS规则的列表</li>
 </ul>
 </li>
 <li>加快代码和资源文件传输的方式<ul>
 <li>CDN分发</li>
-<li>缓存</li>
+<li>缓存(meta)</li>
 <li>压缩代码和资源文件（最优）</li>
 <li>Gzip算法（压缩，header可以检查是否开启）</li>
 <li>JS压缩（UglifyJS压缩和优化，YUI Compressor 仅压缩，Closure Compiler压缩和优化）</li>
 <li>CSS(CSS Compressor,YUI Compressor)</li>
 <li>HTML(HtmlCompressor使用时仔细调查和测试，避免压缩工具和破坏)</li>
-<li>图片资源压缩（TinyPNG，JPEGmini，ImageOptim）</li>
-<li>使用ANT（构建代码和资源压缩任务）</li>
-<li>grunt压缩（js：grunt-contrib-uglify，css：grunt-contrib-cssmin，图片：grunt-contrib-imagemin）<h5 id="前端代码规范"><a href="#前端代码规范" class="headerlink" title="前端代码规范"></a>前端代码规范</h5></li>
+<li>图片资源压缩（TinyPNG，JPEGmini，ImageOptim)</li>
 </ul>
 </li>
-<li>HTML 标签和属性都小写，属性双引号闭合</li>
-<li>层级为4个空格</li>
-<li>添加必要的注释</li>
-<li>class去父辈为前缀</li>
-<li>相同模块放在一起，不同模块进行分类</li>
-<li>JS首字母小写，其他字母大写</li>
-<li>公有接口首字母大写，私有接口首字母小写</li>
-<li>使用带括号包含逻辑块，字符串用单引号标记</li>
-<li>函数参数逗号后面加一个空格</li>
-<li>添加分号，推荐使用//，不使用/* */ </li>
+</ul>
+<hr>
+<ul>
+<li>Airbnb规范: <a href="https://github.com/airbnb/javascript" target="_blank" rel="external">https://github.com/airbnb/javascript</a></li>
+<li>Eslint规范: <a href="https://eslint.org/docs/rules/" target="_blank" rel="external">https://eslint.org/docs/rules/</a></li>
+<li>Beachmark.js性能测试: <a href="https://benchmarkjs.com/docs#toc" target="_blank" rel="external">https://benchmarkjs.com/docs#toc</a></li>
 </ul>
 
       
