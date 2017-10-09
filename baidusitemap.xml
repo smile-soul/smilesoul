@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://smilesoul.cn/2017/07/06/JavaScript-constructor/</loc>
+    <lastmod>2017-10-09T05:55:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>原型函数Construction解析</title>
+        <pubTime>2017-07-06T12:54:16.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程语言" url="http://smilesoul.cn/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://smilesoul.cn/2017/10/09/Web%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E9%98%85%E8%AF%BB%E6%80%BB%E7%BB%93-2/</loc>
     <lastmod>2017-10-09T00:56:44.079Z</lastmod>
     <data>
@@ -117,26 +137,6 @@
            
              
               <breadCrumb title="开发工具" url="http://smilesoul.cn/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://smilesoul.cn/2016/07/06/JavaScript-constructor/</loc>
-    <lastmod>2017-08-04T01:13:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>原型函数Construction解析</title>
-        <pubTime>2016-07-06T12:54:16.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程语言" url="http://smilesoul.cn/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
           
         </display>
     </data>
