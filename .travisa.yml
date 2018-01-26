@@ -1,0 +1,35 @@
+sudo: required
+os: osx
+
+language: node_js
+node_js:
+  - "8"
+
+services:
+  - docker
+
+before_install:
+- brew install hexo
+
+jobs:
+  include:
+    - stage: node_build
+      node_js:
+        - "8"
+      env:
+        - FOO=foo
+      scrpit:
+        - hexo g
+        - docker build -t a:a .
+      branches:
+        only:
+          - master
+        except:
+          - gh-pages
+
+
+
+
+
+
+ 
