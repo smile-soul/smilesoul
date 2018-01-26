@@ -1,6 +1,6 @@
 ---
 title: 原型函数Construction解析
-date: 2016-07-06 20:54:16
+date: 2017-07-06 20:54:16
 tags: JavaScript
 categories: 编程语言
 
