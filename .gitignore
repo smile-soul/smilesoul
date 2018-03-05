@@ -1,0 +1,7 @@
+node_modules
+.cache/
+# Build directory
+.vs_code
+public/
+.DS_Store
+yarn-error.log
